@@ -3,12 +3,122 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smooth-Coated</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --background: #f7f6f3;
+            --foreground: #292724;
+            --muted: #ece9e3;
+            --muted-foreground: #77716a;
+            --border: #e2ded7;
+            --accent: #8a6f58;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: var(--background);
+            color: var(--foreground);
+            font-family: "Inter", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .title-band {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            min-height: 220px;
+            align-items: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+            padding: 2rem max(1.5rem, calc((100vw - 960px) / 2));
+        }
+
+        .title-band::before {
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background-image: url("https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Smooth-coated_Otters_%2829290889122%29.jpg/1280px-Smooth-coated_Otters_%2829290889122%29.jpg");
+            background-position: center 47%;
+            background-size: cover;
+            content: "";
+            opacity: 0.2;
+        }
+
+        .title-content {
+            width: min(100%, 960px);
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.08;
+        }
+
+        .photo-credit {
+            margin: 0.85rem 0 0;
+            color: var(--muted-foreground);
+            font-size: 0.75rem;
+        }
+
+        a {
+            color: inherit;
+            text-underline-offset: 0.18em;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            width: min(100% - 3rem, 960px);
+            margin: 0 auto;
+            padding: 2.5rem 0;
+        }
+
+        main p {
+            margin: 0;
+            color: var(--muted-foreground);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .title-band {
+                min-height: 190px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Smooth-Coated</h1>
-    <p>A personal repository. Nothing to show for at the moment.</p>
+    <header class="title-band">
+        <div class="title-content">
+            <h1>Smooth-Coated</h1>
+            <p class="photo-credit">
+                Photo: <a href="https://commons.wikimedia.org/wiki/File:Smooth-coated_Otters_(29290889122).jpg">Thomas Quine</a>
+                / <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>
+            </p>
+        </div>
+    </header>
+    <main>
+        <p>A personal repository. Nothing to show for at the moment.</p>
+    </main>
 </body>
 
 </html>
